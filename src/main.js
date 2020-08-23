@@ -25,9 +25,8 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
     const date = new Date()
     const now = ((date.getDay()*24 + date.getHours())*60 + date.getMinutes())*60 + date.getSeconds()
     const target = ((d*24+h)*60+m)*60
+    console.log(target - now)
     const delta = (target - now)<=0?(target-now)+(7*24*60*60):(target-now)
-
-    //console.log(delta)
 
     setTimeout(()=>{resolve()},delta*1000)
 })
@@ -50,7 +49,9 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
     const M = new Mastodon(info)
     
     while(true){
-        const odai = wordReader.chooseWord();
+        const odai = await wordReader.chooseWord();
+	
+	console.log(odai)
         /**
          * お題発表
         */

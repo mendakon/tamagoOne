@@ -51,7 +51,7 @@ const randomEmoji = ()=>{
 const happyo = (odai)=>
 `${tomorrow} 玉子丼月曜ワンドロのお題を発表します！ ${randomEmoji()}
 今回のお題は「${odai}」です！ ${randomEmoji()}  ${randomEmoji()}
-開始は10:00からです！  ${randomEmoji()}
+開始は明日、${tomorrow}の22:00からです！  ${randomEmoji()}
 制限時間は一応11:00迄ですが、過ぎても特に何もありません！  ${randomEmoji()}
 投稿するときは #玉子丼月曜ワンドロ のタグをお忘れなく！ ${randomEmoji()}
 (無理にとは言いませんが作品だけ未収載を外していただければタグから一覧に飛べて便利です！)`  

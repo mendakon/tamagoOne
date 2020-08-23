@@ -2,7 +2,7 @@ const readline = require("readline")
 const reader = require("./wordReader.js");
 const { exit } = require("process");
 
-const fileName = "wordList.json"
+const fileName = "./wordList.json"
 
 const rl = readline.createInterface({
     input: process.stdin,

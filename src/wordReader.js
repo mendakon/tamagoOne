@@ -34,7 +34,7 @@ const chooseWord = async ()=>{
 
     await write(FILE_NAME,wordsData)//書き出し
 
-    return word;
+    return word.word;
 }
 
 module.exports = {

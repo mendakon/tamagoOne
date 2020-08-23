@@ -1,22 +1,97 @@
 [
   {
-    "word": "夏",
+    "word": "レトロフューチャー",
     "index": 0,
     "used": false
   },
   {
-    "word": "春",
+    "word": "金属",
     "index": 1,
     "used": false
   },
   {
-    "word": "秋",
+    "word": "散歩",
     "index": 2,
-    "used": true
+    "used": false
   },
   {
-    "word": "冬",
+    "word": "夏",
     "index": 3,
+    "used": false
+  },
+  {
+    "word": " :doba: ",
+    "index": 4,
+    "used": false
+  },
+  {
+    "word": "冨美男",
+    "index": 5,
+    "used": false
+  },
+  {
+    "word": "時計",
+    "index": 6,
+    "used": false
+  },
+  {
+    "word": "巫女",
+    "index": 7,
+    "used": false
+  },
+  {
+    "word": "星座",
+    "index": 8,
+    "used": false
+  },
+  {
+    "word": "角",
+    "index": 9,
+    "used": false
+  },
+  {
+    "word": "獣（けもの）",
+    "index": 10,
+    "used": false
+  },
+  {
+    "word": "テクノロジー",
+    "index": 11,
+    "used": false
+  },
+  {
+    "word": "お城",
+    "index": 12,
+    "used": false
+  },
+  {
+    "word": "クソデカ○○",
+    "index": 13,
+    "used": false
+  },
+  {
+    "word": "戦う乗り物",
+    "index": 14,
+    "used": false
+  },
+  {
+    "word": "あつい！",
+    "index": 15,
+    "used": false
+  },
+  {
+    "word": "妖怪",
+    "index": 16,
+    "used": false
+  },
+  {
+    "word": "風鈴",
+    "index": 17,
+    "used": false
+  },
+  {
+    "word": "ダンス",
+    "index": 18,
     "used": false
   }
 ]
