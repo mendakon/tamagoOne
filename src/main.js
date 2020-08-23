@@ -60,6 +60,14 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
         toot.toot(M, odaiTootText)
 
         /**
+         * 当日トゥート
+         */
+
+        await waitThisTime(1,12,30)
+        const toujituTootText = tootContent.odaiBosyu()
+        toot.toot(M, toujituTootText)
+
+        /**
          * 開始トゥート
         */
         await waitThisTime(1,22,0)
@@ -67,7 +75,7 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
         toot.toot(M, kaishiTootText)
 
         /**
-         * 終了時に謎の絵文字を連射
+         * 終了時
          */
         await waitThisTime(1,23,0)
         const owariTootText = tootContent.owari()
