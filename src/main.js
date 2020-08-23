@@ -1,11 +1,13 @@
 "use strict"
 
-import fs from "fs/promises"
-import Mastodon from "mastodon-api"
-import path from "path"
+const fs = require("fs").promises
+const Mastodon = require("mastodon-api")
+const path = require("path")
 
-import * as toot from "./toot.mjs"
-import * as tootContent from "./tootContent.mjs"
+const toot = require("./toot")
+const tootContent = require("./tootContent")
+const wordReader = require("./wordReader")
+
 
 
 const baseUrl = "https://mstdn.tamag.org"
@@ -25,7 +27,7 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
     const target = ((d*24+h)*60+m)*60
     const delta = (target - now)<=0?(target-now)+(7*24*60*60):(target-now)
 
-    console.log(delta)
+    //console.log(delta)
 
     setTimeout(()=>{resolve()},delta*1000)
 })
@@ -48,11 +50,11 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
     const M = new Mastodon(info)
     
     while(true){
-        const odai = "";
+        const odai = wordReader.chooseWord();
         /**
          * お題発表
         */
-        await waitThisTime(0,5,40)
+        await waitThisTime(0,22,0)
         const odaiTootText = tootContent.happyo(odai)
         toot.toot(M, odaiTootText)
 
@@ -62,6 +64,13 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
         await waitThisTime(1,22,0)
         const kaishiTootText = tootContent.kaishi(odai)
         toot.toot(M, kaishiTootText)
+
+        /**
+         * 終了時に謎の絵文字を連射
+         */
+        await waitThisTime(1,23,0)
+        const owariTootText = tootContent.owari()
+        toot.toot(M, owariTootText)
     }
 })()
 

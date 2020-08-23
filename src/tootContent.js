@@ -40,6 +40,7 @@ const emojis=[
 
 const date = new Date()
 const today = `${date.getMonth()+1}月${date.getDate()}日` 
+const tomorrow = `${date.getMonth()+1}月${date.getDate()+1}日` 
 
 const randomEmoji = ()=>{
     const emojiCount = emojis.length
@@ -47,28 +48,27 @@ const randomEmoji = ()=>{
     return emojis[randIndex]
 }
 
-export const bosyu = ()=>
-`${today}のワンドロのお題を募集します! ${randomEmoji()}
-開催日時は10:00から！ ${randomEmoji()}
-前回、前々回選ばれなかったお題と合わせて抽選します！ ${randomEmoji()}
-期限は今日の9:30まで！ ${randomEmoji()}
-↓↓お題はリプライまで！ :gomennnasai:`
-
-export const tohyo = ()=>
-`お題の投票を行います！ ${randomEmoji()} ${randomEmoji()} ${randomEmoji()}
-今回のワンドロにふさわしいお題に1票をお願いします！ ${randomEmoji()}`
-
-export const happyo = (odai)=>
-`${today} 玉子丼月曜ワンドロ20分前になりました！ ${randomEmoji()}
+const happyo = (odai)=>
+`${tomorrow} 玉子丼月曜ワンドロのお題を発表します！ ${randomEmoji()}
 今回のお題は「${odai}」です！ ${randomEmoji()}  ${randomEmoji()}
 開始は10:00からです！  ${randomEmoji()}
 制限時間は一応11:00迄ですが、過ぎても特に何もありません！  ${randomEmoji()}
 投稿するときは #玉子丼月曜ワンドロ のタグをお忘れなく！ ${randomEmoji()}
 (無理にとは言いませんが作品だけ未収載を外していただければタグから一覧に飛べて便利です！)`  
 
-export const kaishi = (odai)=>
+const kaishi = (odai)=>
 `${today} 玉子丼月曜ワンドロを開始してください！ ${randomEmoji()}
 今回のお題は「${odai}」です！ ${randomEmoji()}
 制限時間は一応11:00迄ですが、過ぎても特に何もありません！ ${randomEmoji()}
 投稿するときは #玉子丼月曜ワンドロ のタグをお忘れなく！ ${randomEmoji()}
 (無理にとは言いませんが作品だけ未収載を外していただければタグから一覧に飛べて便利です！)`
+
+const owari = ()=>
+`${randomEmoji()} ${randomEmoji()} ${randomEmoji()} ${randomEmoji()}`
+
+
+module.exports = {
+    "happyo":happyo,
+    "kaishi":kaishi,
+    "owari":owari
+}

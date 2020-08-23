@@ -2,7 +2,7 @@
 
 
 //トゥートする
-export const toot = (M, string)=>new Promise((resolve, reject)=>{
+const toot = (M, string)=>new Promise((resolve, reject)=>{
     M.post('statuses', {status:string},
         (err,data,res)=>{
             if(err){
@@ -13,3 +13,7 @@ export const toot = (M, string)=>new Promise((resolve, reject)=>{
     })
 })
     
+
+module.exports = {
+    "toot":toot
+}

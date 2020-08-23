@@ -1,0 +1,22 @@
+[
+  {
+    "word": "夏",
+    "index": 0,
+    "used": false
+  },
+  {
+    "word": "春",
+    "index": 1,
+    "used": false
+  },
+  {
+    "word": "秋",
+    "index": 2,
+    "used": true
+  },
+  {
+    "word": "冬",
+    "index": 3,
+    "used": false
+  }
+]
