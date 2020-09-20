@@ -57,10 +57,15 @@ const happyo = (odai)=>
 
 
 const odaiBosyu = ()=>
-`今日は玉子丼月曜ワンドロの日です！${randomEmoji()}
-現在玉子丼月曜ワンドロではお題の募集を行っております${randomEmoji()}
-良いお題等ありましたらこちら↓↓↓に投稿をお願いします！${randomEmoji()}
+`今日は玉子丼月曜ワンドロの日です！ ${randomEmoji()}
+現在玉子丼月曜ワンドロではお題の募集を行っております ${randomEmoji()}
+良いお題等ありましたらこちら↓↓↓に投稿をお願いします！ ${randomEmoji()}
 https://odaibako.net/u/ORF5dk3WrqEQ4iv`
+
+const kokuchi = (odai)=>
+`玉子丼月曜ワンドロ一時間前になりました！ ${randomEmoji()}
+準備はお済でしょうか？ ${randomEmoji()} ${randomEmoji()} ${randomEmoji()} ${randomEmoji()}
+今日のお題は「${odai}」です！ ${randomEmoji()} ${randomEmoji()}`
 
 const kaishi = (odai)=>
 `${today} 玉子丼月曜ワンドロを開始してください！ ${randomEmoji()}
@@ -77,6 +82,7 @@ const owari = ()=>
 module.exports = {
     "happyo":happyo,
     "kaishi":kaishi,
+    "kokuchi":kokuchi,
     "owari":owari,
     "odaiBosyu":odaiBosyu
 }

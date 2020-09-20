@@ -49,13 +49,12 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
     const M = new Mastodon(info)
     
     while(true){
-        const odai = await wordReader.chooseWord();
 	
-	console.log(odai)
         /**
          * お題発表
         */
         await waitThisTime(0,22,0)
+        const odai = await wordReader.chooseWord();
         const odaiTootText = tootContent.happyo(odai)
         toot.toot(M, odaiTootText)
 
@@ -66,6 +65,13 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
         await waitThisTime(1,12,30)
         const toujituTootText = tootContent.odaiBosyu()
         toot.toot(M, toujituTootText)
+
+        /** 
+         * 一時間前トゥート
+        */
+        await waitThisTime(1,21,0)
+        const kokuchi = tootContent.kokuchi(odai)
+        toot.toot(M, kokuchi)
 
         /**
          * 開始トゥート

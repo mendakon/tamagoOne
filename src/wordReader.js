@@ -30,7 +30,7 @@ const chooseWord = async ()=>{
 
     const word = unusedWord[randonNum]//ワードを取り出し
 
-    //wordsData[word.index].used = true;//wordをusedに
+    wordsData[word.index].used = true;//wordをusedに
 
     await write(FILE_NAME,wordsData)//書き出し
 
