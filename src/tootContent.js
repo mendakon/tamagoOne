@@ -38,9 +38,9 @@ const emojis=[
     ":sushi_otya:",
 ]
 
-const date = new Date()
-const today = `${date.getMonth()+1}月${date.getDate()}日` 
-const tomorrow = `${date.getMonth()+1}月${date.getDate()+1}日` 
+const date = () => new Date()
+const today = ()=> `${date().getMonth()+1}月${date().getDate()}日` 
+const tomorrow = () => `${date().getMonth()+1}月${date().getDate()+1}日` 
 
 const randomEmoji = ()=>{
     const emojiCount = emojis.length
@@ -50,9 +50,9 @@ const randomEmoji = ()=>{
 
 
 const happyo = (odai)=>
-`${tomorrow} 玉子丼月曜ワンドロのお題を発表します！ ${randomEmoji()}
+`${tomorrow()} の玉子丼月曜ワンドロのお題を発表します！ ${randomEmoji()}
 明日のお題は「${odai}」です！ ${randomEmoji()}  ${randomEmoji()}
-開始は明日、${tomorrow}の22:00からです！  ${randomEmoji()}
+開始は明日、${tomorrow()}の22:00からです！  ${randomEmoji()}
 一応、主要な時間を明日夜、(10:00-11:00)としていますが、自由な時間に書いてOKです！  ${randomEmoji()}` 
 
 
@@ -68,7 +68,7 @@ const kokuchi = (odai)=>
 今日のお題は「${odai}」です！ ${randomEmoji()} ${randomEmoji()}`
 
 const kaishi = (odai)=>
-`${today} 玉子丼月曜ワンドロを開始してください！ ${randomEmoji()}
+`${today()} 玉子丼月曜ワンドロを開始してください！ ${randomEmoji()}
 今回のお題は「${odai}」です！ ${randomEmoji()}
 制限時間は一応11:00迄ですが、過ぎても特に何もありません！ ${randomEmoji()}
 投稿するときは #玉子丼月曜ワンドロ のタグをお忘れなく！ ${randomEmoji()}
@@ -86,18 +86,16 @@ module.exports = {
     "owari":owari,
     "odaiBosyu":odaiBosyu
 }
+
 /*
 ;(async ()=>{
-    const h = await happyo("ナナチ")
-    const k = await kaishi("バナナナチ")
-    const o = await odaiBosyu();
-    const ow = await owari()
-    console.log(h)
-    console.log("")
-    console.log(o)
-    console.log("")
-    console.log(k)
-    console.log("")
-    console.log(ow)
-})()
-*/
+    console.log(happyo("バナチ"));
+    console.log("---------------------------");
+    console.log(odaiBosyu());
+    console.log("---------------------------");
+    console.log(kokuchi("バナチ"));
+    console.log("---------------------------");
+    console.log(kaishi("バナチ"));
+    console.log("---------------------------");
+    console.log(owari());
+})()*/
