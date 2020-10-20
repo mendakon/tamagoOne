@@ -7,10 +7,13 @@ const path = require("path")
 const toot = require("./toot")
 const tootContent = require("./tootContent")
 const wordReader = require("./wordReader")
+const loadContent = require("./loadContent")
 
 
 
 const baseUrl = "https://mstdn.tamag.org"
+
+const streamUrl = "streaming/user"
 
 //認証ファイルの名前
 const authFileName = path.join("../authedId.json")
@@ -31,7 +34,6 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
     setTimeout(()=>{resolve()},delta*1000)
 })
 
-
 ;(async()=>{
     //トークンコードを読みこむ
     const input = await fs.readFile(`${authFileName}`, "utf-8")
@@ -47,6 +49,14 @@ const waitThisTime = (d,h,m)=> new Promise((resolve, reject)=>{
         api_url: `${baseUrl}/api/v1/`,
     }
     const M = new Mastodon(info)
+
+    //ストリームを開始
+    const listener = M.stream(streamUrl)
+    listener.on('message', (toot)=>loadContent.onLoadMeaasage(toot,M))
+    listener.on('error', (error)=>console.log(error))
+
+    
+
     
     while(true){
 	
