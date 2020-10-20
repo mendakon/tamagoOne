@@ -1,3 +1,5 @@
 node_modules/
 
 authedId.json
+
+src/wordList.json
